@@ -1,7 +1,7 @@
 {
   "name": "material-ui-cra-styled-components",
   "version": "5.0.0",
-  "homepage": "https://clauraz.github.io/paul-&-diana",
+  "homepage": "https://clauraz.github.io/paul-diana",
   "private": true,
   "dependencies": {
     "@mui/lab": "next",
