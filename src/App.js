@@ -116,7 +116,7 @@ const Header = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: "url(/images/008.jpeg)",
+        backgroundImage: "url(https://i.ibb.co/V0qGrrSc/008.jpg)",
       }}
       height="900px"
       display="flex"
@@ -254,8 +254,8 @@ const Message = () => {
         23 August 2024, Cluj-Napoca
       </h3>
       <Box style={{ display: "flex", gap: "20px", position: "relative" }}>
-        <StyledImg src="/images/paul.jpg" />
-        <StyledImg src="/images/diana.jpg" />
+        <StyledImg src="https://i.ibb.co/My6jr5v9/paul.jpg" />
+        <StyledImg src="https://i.ibb.co/6Q8wRff/diana.jpg" />
         <div
           style={{
             position: "absolute",
@@ -398,7 +398,7 @@ const Cards = ({ id }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: "url(/images/010.jpeg)",
+        backgroundImage: "url(https://i.ibb.co/9mBp2nqR/010.jpg)",
       }}
       height="fit-content"
       display="flex"
