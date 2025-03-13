@@ -482,17 +482,32 @@ const Confirmare = () => {
     setParticipare(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const responses = {
-      nume: e.target[0].value,
-      adulti: e.target[2].value,
-      copii: e.target[4].value,
-      meniu: e.target[6].value,
-      participare: e.target[8].value,
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const target = event.target;
+
+    const inputValue = {
+      Nume: target.Nume.value,
+      Adulti: target.Adulti.value,
+      Copii: target.Copii.value,
+      Meniu: target.Meniu.value,
+      Prezenta: target.Prezenta.value,
     };
-    console.log(responses);
+
+    const baseURL = `https://script.google.com/macros/s/AKfycbyHMUDriMjbqPosNWw7Db8xUzX01bLdTQrg15J4u3HoRryRDVw-sGjylua5la_ASiO3bA/exec`;
+
+    fetch(baseURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `Nume=${inputValue.Nume}&Adulti=${inputValue.Adulti}&Copii=${inputValue.Copii}&Meniu=${inputValue.Meniu}&Prezenta=${inputValue.Prezenta}`,
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        alert(data);
+      })
+      .catch((error) => console.log(error));
   };
+
   return (
     <Container
       id="CONFIRMARE"
@@ -529,8 +544,8 @@ const Confirmare = () => {
           este Smart Casual. Mulțumim.
         </p>
       </div>
-      <div style={{ width: "100%" }}>
-        <form style={{ width: "100%" }} onSubmit={handleSubmit}>
+      <div style={{ width: "100%", marginTop: "50px" }}>
+        <form onSubmit={handleSubmit}>
           <Box
             style={{
               width: "100%",
@@ -542,6 +557,7 @@ const Confirmare = () => {
             <TextField
               id="nume-complet"
               label="Nume Complet"
+              name="Nume"
               style={{ flexGrow: 1 }}
               variant="outlined"
               required
@@ -553,16 +569,20 @@ const Confirmare = () => {
               variant="outlined"
               style={{ flexGrow: 1 }}
               type="number"
+              name="Adulti"
               required
+              slotProps={{ htmlInput: { inputMode: "numeric" } }}
             />
             <TextField
               id="numar-copii"
               min={0}
               label="Numar Copii"
+              name="Copii"
               variant="outlined"
               style={{ flexGrow: 1 }}
               type="number"
               required
+              slotProps={{ htmlInput: { inputMode: "numeric" } }}
             ></TextField>
           </Box>
           <br />
@@ -580,6 +600,7 @@ const Confirmare = () => {
               value={meniu}
               onChange={handleMeniuChange}
               style={{ flexGrow: 1 }}
+              name="Meniu"
             >
               <MenuItem value="standard">Meniu Standard</MenuItem>
               <MenuItem value="vegetarian">Meniu Vegetarian</MenuItem>
@@ -590,6 +611,7 @@ const Confirmare = () => {
               value={participare}
               onChange={handleParticipareChange}
               style={{ flexGrow: 1 }}
+              name="Prezenta"
             >
               <MenuItem value="petrecere">Particip doar la petrecere</MenuItem>
               <MenuItem value="biserica-si-petrecere">
@@ -614,6 +636,7 @@ const Confirmare = () => {
                 borderRadius: "30px",
                 padding: "0 30px",
               }}
+              type="submit"
             >
               Confirm prezenta
             </button>
