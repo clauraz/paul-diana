@@ -116,8 +116,7 @@ const Header = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage:
-          "url(https://i0.wp.com/photofocus.com/wp-content/uploads/2021/03/wedding-hero-silhouette.jpg?w=2560&ssl=1)",
+        backgroundImage: "url(/images/008.jpeg)",
       }}
       height="900px"
       display="flex"
@@ -255,8 +254,8 @@ const Message = () => {
         23 August 2024, Cluj-Napoca
       </h3>
       <Box style={{ display: "flex", gap: "20px", position: "relative" }}>
-        <StyledImg src="https://media.istockphoto.com/id/1344963248/photo/studio-shot-of-an-attractive-young-woman-posing-against-a-grey-background.jpg?s=612x612&w=0&k=20&c=KdMW7tKUNRjJ3SuBrek1zNp7iMWaN99gn-u6KqANRu4=" />
-        <StyledImg src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" />
+        <StyledImg src="/images/paul.jpg" />
+        <StyledImg src="/images/diana.jpg" />
         <div
           style={{
             position: "absolute",
@@ -399,8 +398,7 @@ const Cards = ({ id }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage:
-          "url(https://i0.wp.com/photofocus.com/wp-content/uploads/2021/03/wedding-hero-silhouette.jpg?w=2560&ssl=1)",
+        backgroundImage: "url(/images/010.jpeg)",
       }}
       height="fit-content"
       display="flex"
