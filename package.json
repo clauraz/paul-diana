@@ -1,6 +1,7 @@
 {
   "name": "material-ui-cra-styled-components",
   "version": "5.0.0",
+  "homepage": "https://clauraz.github.io/paul-&-diana",
   "private": true,
   "dependencies": {
     "@mui/lab": "next",
@@ -20,7 +21,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -35,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "latest"
+    "@craco/craco": "latest",
+    "gh-pages": "^6.3.0"
   }
 }
