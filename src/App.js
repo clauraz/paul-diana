@@ -380,7 +380,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
         style={{
           width: "100%",
           height: "100%",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#000000",
           borderRadius: "7px",
           opacity: "0.3",
         }}
@@ -553,11 +553,8 @@ const Confirmare = () => {
         </h2>
         <p style={{ textAlign: "center", fontSize: "24px" }}>
           Te rugăm să completezi următoarele detalii pentru confirmare ideal
-          până la data de <b>02.04.2024</b>.
-        </p>
-        <p style={{ textAlign: "center", fontSize: "24px" }}>
-          Pentru că ne dorim să ne simțim cât mai confortabil, codul vestimentar
-          este Smart Casual. Mulțumim.
+          până la data de <br />
+          <b>2 August 2024</b>
         </p>
       </div>
       <div style={{ width: "100%", marginTop: "50px" }}>
