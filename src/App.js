@@ -251,7 +251,7 @@ const Message = () => {
         Vă invităm să fiți alături de noi în cea mai importantă zi.
       </p>
       <h3 style={{ fontSize: "24px", marginBottom: "50px" }}>
-        23 August 2024, Cluj-Napoca
+        23 August 2025, Cluj-Napoca
       </h3>
       <Box style={{ display: "flex", gap: "20px", position: "relative" }}>
         <StyledImg src="https://i.ibb.co/My6jr5v9/paul.jpg" />
@@ -554,7 +554,7 @@ const Confirmare = () => {
         <p style={{ textAlign: "center", fontSize: "24px" }}>
           Te rugăm să completezi următoarele detalii pentru confirmare ideal
           până la data de <br />
-          <b>2 August 2024</b>
+          <b>2 August 2025</b>
         </p>
       </div>
       <div style={{ width: "100%", marginTop: "50px" }}>
