@@ -494,18 +494,30 @@ const Confirmare = () => {
       Prezenta: target.Prezenta.value,
     };
 
-    const baseURL = `https://script.google.com/macros/s/AKfycbyHMUDriMjbqPosNWw7Db8xUzX01bLdTQrg15J4u3HoRryRDVw-sGjylua5la_ASiO3bA/exec`;
-
+    const baseURL = `https://script.google.com/macros/s/AKfycbyPOp7EJM3laGvauh6l9Tk8CaxJdzsortrZJ01N4OCEAahWp5YrItEoiPirokOPEa1Jhg/exec`;
+    const formData = new FormData();
+    Object.keys(inputValue).forEach((key) => {
+      formData.append(key, inputValue[key]);
+    });
     fetch(baseURL, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `Nume=${inputValue.Nume}&Adulti=${inputValue.Adulti}&Copii=${inputValue.Copii}&Meniu=${inputValue.Meniu}&Prezenta=${inputValue.Prezenta}`,
+      body: formData,
     })
-      .then((res) => res.text())
-      .then((data) => {
-        alert(data);
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
       })
-      .catch((error) => console.log(error));
+      .then((data) => {
+        console.log(data);
+        alert("Ati trimis confirmarea cu succes. Multumim!");
+        target.reset();
+      })
+      .catch((err) => {
+        console.error("There was a problem with the fetch operation:", err);
+        alert("Ceva nu a mers bine. Mai incearca o data!");
+      });
   };
 
   return (
