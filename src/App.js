@@ -473,6 +473,7 @@ const Cards = ({ id }) => {
 const Confirmare = () => {
   const [meniu, setMeniu] = React.useState("standard");
   const [participare, setParticipare] = React.useState("petrecere");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleMeniuChange = (e) => {
     setMeniu(e.target.value);
@@ -484,6 +485,7 @@ const Confirmare = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const target = event.target;
 
     const inputValue = {
@@ -510,11 +512,13 @@ const Confirmare = () => {
         return res.json();
       })
       .then((data) => {
+        setIsLoading(false);
         console.log(data);
         alert("Ati trimis confirmarea cu succes. Multumim!");
         target.reset();
       })
       .catch((err) => {
+        setIsLoading(false);
         console.error("There was a problem with the fetch operation:", err);
         alert("Ceva nu a mers bine. Mai incearca o data!");
       });
@@ -638,26 +642,29 @@ const Confirmare = () => {
               justifyContent: "center",
             }}
           >
-            <button
-              style={{
-                backgroundColor: "#f14e95",
-                color: "white",
-                height: "50px",
-                outline: "none",
-                border: "none",
-                borderRadius: "30px",
-                padding: "0 30px",
-              }}
-              type="submit"
-            >
-              Confirm prezenta
-            </button>
+            <StyledSubmit disabled={isLoading} type="submit">
+              {isLoading ? "Se trimite..." : "Confirma prezenta"}
+            </StyledSubmit>
           </Box>
         </form>
       </div>
     </Container>
   );
 };
+
+const StyledSubmit = styled.button`
+  background-color: #f14e95;
+  color: white;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 0 30px;
+  &:disabled {
+    background-color: grey;
+    opacity: 0.5;
+  }
+`;
 
 const StyledButton = styled.a`
     padding: 15px 20px;
