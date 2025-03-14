@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/paul-diana/static/js/main.e4f605d0.js",
+    "main.js": "/paul-diana/static/js/main.bd5c2989.js",
     "index.html": "/paul-diana/index.html",
-    "main.e4f605d0.js.map": "/paul-diana/static/js/main.e4f605d0.js.map"
+    "main.bd5c2989.js.map": "/paul-diana/static/js/main.bd5c2989.js.map"
   },
   "entrypoints": [
-    "static/js/main.e4f605d0.js"
+    "static/js/main.bd5c2989.js"
   ]
 }
