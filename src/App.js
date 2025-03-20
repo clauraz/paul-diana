@@ -287,7 +287,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
       style={{
         width: "100%",
         maxWidth: "320px",
-        border: "3px solid white",
+        border: "2px solid white",
         height: "320px",
         borderRadius: "10px",
         position: "relative",
@@ -324,6 +324,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
             justifyContent: "space-between",
             gap: "20px",
             padding: "20px",
+            alignItems: "flex-start",
           }}
         >
           <div
@@ -682,7 +683,6 @@ export default function App() {
       <Message />
       <Cards id="MOMENTUL-SI-LOCUL" />
       <Confirmare />
-      <Copyright />
     </>
   );
 }
