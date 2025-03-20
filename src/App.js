@@ -1,6 +1,8 @@
 import * as React from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import ICalendarLink from "react-icalendar-link";
+
 import {
   TextField,
   Select,
@@ -109,6 +111,14 @@ const MainNumber = styled.span`
 `;
 
 const Header = () => {
+  const event = {
+    title: "Nunta Paul & Diana",
+    startTime: "2025-08-23T11:00:00+02:00",
+    endTime: "2025-08-23T21:00:00+02:00",
+    location:
+      "Hotel Sunny Hill, Strada Făgetului 31A, Cluj-Napoca 400497, Romania",
+  };
+
   return (
     <Box
       style={{
@@ -116,7 +126,8 @@ const Header = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: "url(https://i.ibb.co/V0qGrrSc/008.jpg)",
+        backgroundImage: "url(https://i.ibb.co/39jg3Y1X/22.jpg)",
+        backgroundPositionY: "16%",
       }}
       height="900px"
       display="flex"
@@ -163,7 +174,7 @@ const Header = () => {
           Au mai rămas...
         </StyledTypography>
         <Countdown
-          date={1755957600000}
+          date={1755950400000}
           daysInHours={false}
           renderer={(props) => {
             return (
@@ -204,10 +215,7 @@ const Header = () => {
             justifyContent: "center",
           }}
         >
-          <StyledButton
-            variant="outlined"
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250823%2F20250824&details=&location=Hotel%20Sunny%20Hill%2C%20Strada%20F%C4%83getului%2031A%2C%20Cluj-Napoca%20400497%2C%20Romania&text=Nunta%20Paul%20si%20Diana"
-          >
+          <StyledButton variant="outlined" event={event}>
             Salvati Data
           </StyledButton>
         </div>
@@ -254,8 +262,8 @@ const Message = () => {
         23 August 2025, Cluj-Napoca
       </h3>
       <Box style={{ display: "flex", gap: "20px", position: "relative" }}>
-        <StyledImg src="https://i.ibb.co/My6jr5v9/paul.jpg" />
-        <StyledImg src="https://i.ibb.co/6Q8wRff/diana.jpg" />
+        <StyledImg src="https://i.ibb.co/gLRwzg7M/paul2.jpg" />
+        <StyledImg src="https://i.ibb.co/pj4Vq9MW/diana3a.jpg" />
         <div
           style={{
             position: "absolute",
@@ -398,7 +406,8 @@ const Cards = ({ id }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: "url(https://i.ibb.co/9mBp2nqR/010.jpg)",
+        backgroundImage: "url(https://i.ibb.co/VcHj561Y/26.jpg)",
+        backgroundPositionY: "65%",
       }}
       height="fit-content"
       display="flex"
@@ -663,7 +672,7 @@ const StyledSubmit = styled.button`
   }
 `;
 
-const StyledButton = styled.a`
+const StyledButton = styled(ICalendarLink)`
     padding: 15px 20px;
     background: #fff !important;
     color: #F14E95;
