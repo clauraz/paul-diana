@@ -284,7 +284,7 @@ const Message = () => {
             alignItems: "center",
           }}
         >
-          <span style={{ fontSize: "30px" }}>💖</span>
+          <span style={{ fontSize: "30px" }}>♥️</span>
         </div>
       </Box>
     </Container>
