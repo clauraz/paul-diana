@@ -3,20 +3,10 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import ICalendarLink from "react-icalendar-link";
 
-import {
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-  FormControl,
-  Form,
-} from "@mui/material";
+import { TextField, Select, MenuItem } from "@mui/material";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import ProTip from "./ProTip";
 import Countdown from "react-countdown";
-import simplyCountdown from "simplycountdown.js";
 import styled from "styled-components";
 
 function Copyright() {
@@ -284,7 +274,7 @@ const Message = () => {
             alignItems: "center",
           }}
         >
-          <span style={{ fontSize: "30px" }}>💖</span>
+          <span style={{ fontSize: "30px" }}>♥️</span>
         </div>
       </Box>
     </Container>
