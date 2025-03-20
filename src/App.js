@@ -64,7 +64,7 @@ const Navigation = () => {
             textDecoration: "none",
           }}
         >
-          Ne casatorim!
+          Ne căsătorim!
         </a>
         {/* <nav style={{ display: "flex", gap: "24px", alignItems: "center" }}>
           <StyledLink href="/">ACASA</StyledLink>
@@ -168,7 +168,7 @@ const Header = () => {
             fontSize: "30px",
             marginBottom: "20px",
             textAlign: "center",
-            fontWeight: "bold",
+            fontWeight: "400",
           }}
         >
           Au mai rămas...
@@ -215,8 +215,12 @@ const Header = () => {
             justifyContent: "center",
           }}
         >
-          <StyledButton variant="outlined" event={event}>
-            Salvati Data
+          <StyledButton
+            variant="outlined"
+            event={event}
+            style={{ textTransform: "uppercase" }}
+          >
+            Salvaţi Data
           </StyledButton>
         </div>
       </Container>
@@ -248,17 +252,17 @@ const Message = () => {
         style={{
           fontFamily: "Sacramento, sans-serif",
           fontSize: "60px",
-          fontWeight: "400",
+          fontWeight: "500",
           width: "140px",
           color: "#f14e95",
         }}
       >
-        Salut
+        Salut!
       </h2>
-      <p style={{ fontSize: "18px", color: "grey" }}>
+      <p style={{ fontSize: "18px", color: "grey", textAlign: "center" }}>
         Vă invităm să fiți alături de noi în cea mai importantă zi.
       </p>
-      <h3 style={{ fontSize: "24px", marginBottom: "50px" }}>
+      <h3 style={{ fontSize: "24px", marginBottom: "50px", fontWeight: "500" }}>
         23 August 2025, Cluj-Napoca
       </h3>
       <Box style={{ display: "flex", gap: "20px", position: "relative" }}>
@@ -297,6 +301,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
         height: "320px",
         borderRadius: "10px",
         position: "relative",
+        fontWeight: "400 !important",
       }}
     >
       <div
@@ -315,6 +320,8 @@ const Card = ({ text, data, ora, locatie, link }) => {
             padding: "25px 0px",
             color: "white",
             textAlign: "center",
+            fontWeight: "400",
+            textTransform: "uppercase",
           }}
         >
           {text}
@@ -337,7 +344,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
             }}
           >
             <span style={{ fontSize: "30px" }}>🕙</span>
-            <span style={{ color: "white", fontWeight: "600" }}>{ora}</span>
+            <span style={{ color: "white", fontWeight: "500" }}>{ora}</span>
           </div>
           <div
             style={{
@@ -349,7 +356,12 @@ const Card = ({ text, data, ora, locatie, link }) => {
           >
             <span style={{ fontSize: "30px" }}>📅</span>
             <span
-              style={{ color: "white", fontWeight: "600", textAlign: "center" }}
+              style={{
+                color: "white",
+                fontWeight: "600",
+                textAlign: "center",
+                fontWeight: "500",
+              }}
             >
               {data}
             </span>
@@ -364,7 +376,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
           >
             <span style={{ fontSize: "30px" }}>🌍</span>
             <span
-              style={{ color: "white", fontWeight: "600", textAlign: "center" }}
+              style={{ color: "white", fontWeight: "500", textAlign: "center" }}
             >
               {locatie}
             </span>
@@ -376,11 +388,12 @@ const Card = ({ text, data, ora, locatie, link }) => {
             textDecoration: "none",
             textAlign: "center",
             color: "#f14e95",
-            fontWeight: "bold",
+            fontWeight: "500",
             marginBottom: "25px",
+            textTransform: "uppercase",
           }}
         >
-          DESCHIDE IN GOOGLE MAPS
+          DESCHIDE îN GOOGLE MAPS
         </a>
       </div>
 
@@ -425,16 +438,6 @@ const Cards = ({ id }) => {
         }}
       >
         <div>
-          <h3
-            style={{
-              width: "100%",
-              color: "white",
-              opacity: "0.8",
-              textAlign: "center",
-            }}
-          >
-            DESPRE EVENIMENT
-          </h3>
           <h2
             style={{
               width: "100%",
@@ -446,7 +449,7 @@ const Cards = ({ id }) => {
               marginBottom: "50px",
             }}
           >
-            Nunta noastra
+            Nunta noastră
           </h2>
         </div>
         <Box
@@ -459,7 +462,7 @@ const Cards = ({ id }) => {
           }}
         >
           <Card
-            text="CUNUNIA RELIGIOASA"
+            text="CUNUNIA RELIGIOASă"
             ora="12:00"
             data="23 August 2025"
             locatie="Biserica Ortodoxă „Sfinții Apostoli Petru și Pavel” Mănăștur"
@@ -555,15 +558,15 @@ const Confirmare = () => {
             fontWeight: "500",
             color: "#f14e95",
             textAlign: "center",
-            marginBottom: "50px",
+            marginBottom: "5px",
           }}
         >
           Participi?
         </h2>
-        <p style={{ textAlign: "center", fontSize: "24px" }}>
-          Te rugăm să completezi următoarele detalii pentru confirmare ideal
+        <p style={{ textAlign: "center", fontSize: "20px" }}>
+          Te rugăm să completezi următoarele detalii pentru confirmare, ideal
           până la data de <br />
-          <b>2 August 2025</b>
+          <span style={{ fontWeight: "500" }}>02.08.2025</span>
         </p>
       </div>
       <div style={{ width: "100%", marginTop: "50px" }}>
@@ -587,7 +590,7 @@ const Confirmare = () => {
             <TextField
               id="numar-adulti"
               min={0}
-              label="Numar Adulti"
+              label="Număr Adulţi"
               variant="outlined"
               style={{ flexGrow: 1 }}
               type="number"
@@ -598,7 +601,7 @@ const Confirmare = () => {
             <TextField
               id="numar-copii"
               min={0}
-              label="Numar Copii"
+              label="Număr Copii"
               name="Copii"
               variant="outlined"
               style={{ flexGrow: 1 }}
@@ -637,7 +640,7 @@ const Confirmare = () => {
             >
               <MenuItem value="petrecere">Particip doar la petrecere</MenuItem>
               <MenuItem value="biserica-si-petrecere">
-                Particip la biserica si petrecere
+                Particip la biserică și petrecere
               </MenuItem>
             </Select>
           </Box>
@@ -649,7 +652,7 @@ const Confirmare = () => {
             }}
           >
             <StyledSubmit disabled={isLoading} type="submit">
-              {isLoading ? "Se trimite..." : "Confirma prezenta"}
+              {isLoading ? "Se trimite..." : "Confirmă prezenta"}
             </StyledSubmit>
           </Box>
         </form>
