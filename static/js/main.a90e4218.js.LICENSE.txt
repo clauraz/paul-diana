@@ -74,7 +74,7 @@ PERFORMANCE OF THIS SOFTWARE.
  */
 
 /**
- * @mui/styled-engine-sc v7.0.0-beta.3
+ * @mui/styled-engine-sc v7.0.0-rc.0
  *
  * @license MIT
  * This source code is licensed under the MIT license found in the
