@@ -9,30 +9,6 @@ import Link from "@mui/material/Link";
 import Countdown from "react-countdown";
 import styled from "styled-components";
 
-function Copyright() {
-  return (
-    <StyledTypography
-      variant="body2"
-      align="center"
-      sx={{
-        color: "text.secondary",
-      }}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}.
-    </StyledTypography>
-  );
-}
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-`;
-
 const Navigation = () => {
   return (
     <Container
@@ -56,11 +32,6 @@ const Navigation = () => {
         >
           Ne căsătorim!
         </a>
-        {/* <nav style={{ display: "flex", gap: "24px", alignItems: "center" }}>
-          <StyledLink href="/">ACASA</StyledLink>
-          <StyledLink href="#MOMENTUL-SI-LOCUL">MOMENTUL SI LOCUL</StyledLink>
-          <StyledLink href="#CONFIRMARE">CONFIRMARE</StyledLink>
-        </nav> */}
       </Box>
     </Container>
   );
@@ -345,7 +316,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
               alignItems: "center",
             }}
           >
-            <span style={{ fontSize: "30px" }}>📅</span>
+            <span style={{ fontSize: "30px" }}>📌</span>
             <span
               style={{
                 color: "white",
@@ -365,7 +336,7 @@ const Card = ({ text, data, ora, locatie, link }) => {
               alignItems: "center",
             }}
           >
-            <span style={{ fontSize: "30px" }}>🌍</span>
+            <span style={{ fontSize: "30px" }}>📍</span>
             <span
               style={{ color: "white", fontWeight: "500", textAlign: "center" }}
             >
